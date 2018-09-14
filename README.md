@@ -15,7 +15,7 @@ Using PHPCompatibility requires you to first install PHP CodeSniffer globally an
 The easiest way is to create a shell function for `phpco`. No need to clone this repository. First make sure you have [Docker](https://docs.docker.com/install) installed on your machine. Then execute this in your local terminal:
 
 ```sh
-phpco() { docker run --init -v $PWD:/mnt/src --rm -u "$(id -u):$(id -g)" frbit/phpco:latest $@; return $?; }
+phpco() { docker run --init -v $PWD:/mnt/src:cached --rm -u "$(id -u):$(id -g)" frbit/phpco:latest $@; return $?; }
 ```
 
 You can also add this snippet to your `.bashrc` or similar shell startup script. That way it will always be available whenever you open a new shell.
