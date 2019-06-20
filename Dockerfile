@@ -5,7 +5,7 @@ ARG PHPCS_RELEASE="3.4.2"
 RUN pear install PHP_CodeSniffer-$PHPCS_RELEASE
 
 # Install the PHPCompatibility standard
-ARG PHPCOMP_RELEASE="8.2.0"
+ARG PHPCOMP_RELEASE="9.1.1"
 RUN set -eux &&\
     apk --no-cache add git &&\
     mkdir -p "/opt/" &&\
