@@ -1,4 +1,4 @@
-FROM php:7.2-cli-alpine
+FROM php:7.3-cli-alpine
 
 # Install PHP CodeSniffer
 ARG PHPCS_RELEASE="3.3.1"
