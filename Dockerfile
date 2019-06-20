@@ -17,7 +17,7 @@ RUN set -eux &&\
 # Configure phpcs defaults
 RUN phpcs --config-set installed_paths /opt/PHPCompatibility &&\
     phpcs --config-set default_standard PHPCompatibility &&\
-    phpcs --config-set testVersion 7.2 &&\
+    phpcs --config-set testVersion 7.3 &&\
     phpcs --config-set report_width 120
 
 # Configure PHP with some extra memory
