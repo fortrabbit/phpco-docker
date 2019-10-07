@@ -34,6 +34,12 @@ If you have also updated all of your dependencies and are sure they support the 
 phpco -p --colors --extensions=php . -n --ignore="vendor/"
 ```
 
+## Running out of memory?
+You can specify custom memory limit for the container if it's needed when exporting the function just add a new ENV variable called MEMORY_LIMIT with the php value you needed
+```sh
+phpco() { docker run --init -e "MEMORY_LIMIT=512M" -v $PWD:/mnt/src:cached --rm -u "$(id -u):$(id -g)" frbit/phpco:latest $@; return $?; }
+```
+
 Remember: Since this is running within a docker container, the paths to your source files will start with `/mnt/src/` instead of the actual absolute path on your host computer.
 
 [Read more about available flags specific to PHP Compatibility](https://github.com/PHPCompatibility/PHPCompatibility) and about the [underlying options for PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage).
