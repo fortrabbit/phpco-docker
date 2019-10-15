@@ -21,7 +21,7 @@ RUN phpcs --config-set installed_paths /opt/PHPCompatibility &&\
     phpcs --config-set report_width 120
 
 # Configure PHP with some extra memory
-RUN echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/memory.ini
+RUN echo "memory_limit = -1" >> /usr/local/etc/php/conf.d/memory.ini
 
 WORKDIR /mnt/src
 
