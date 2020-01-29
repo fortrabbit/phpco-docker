@@ -21,14 +21,14 @@ phpco() { docker run --init -v $PWD:/mnt/src:cached --rm -u "$(id -u):$(id -g)" 
 You can also add this snippet to your `.bashrc` or similar shell startup script. That way it will always be available whenever you open a new shell.
 
 ## Running phpco-docker
-Now you can directly use the tool. This command will do a full check of all your code in the current directory for PHP 7.3 compatibility.
+Now you can directly use the tool. This command will do a full check of all your code in the current directory for PHP 7.4 compatibility.
 ```
-phpco -p --colors --extensions=php --runtime-set testVersion 7.3 .
+phpco -p --colors --extensions=php --runtime-set testVersion 7.4 .
 ```
 
 As it completes you will see a list of found warnings and errors in your code. If you are getting a lot of warnings, but only want to deal with the stuff that will actually break, add `-n` to only show errors.
 
-If you have also updated all of your dependencies and are sure they support the PHP version you want to migrate to, you can exclude the `vendor` folder completely to only check your own code. Checking for PHP version 7.3 is the default so we can also remove that part.
+If you have also updated all of your dependencies and are sure they support the PHP version you want to migrate to, you can exclude the `vendor` folder completely to only check your own code. Checking for PHP version 7.4 is the default so we can also remove that part.
 
 ```
 phpco -p --colors --extensions=php . -n --ignore="vendor/"
