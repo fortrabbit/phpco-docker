@@ -1,11 +1,11 @@
-FROM php:7.4-cli-alpine
+FROM php:8.0-cli-alpine
 
 # Install PHP CodeSniffer
-ARG PHPCS_RELEASE="3.5.3"
+ARG PHPCS_RELEASE="3.6.0"
 RUN pear install PHP_CodeSniffer-$PHPCS_RELEASE
 
 # Install the PHPCompatibility standard
-ARG PHPCOMP_RELEASE="9.3.4"
+ARG PHPCOMP_RELEASE="9.3.5"
 RUN set -eux &&\
     apk --no-cache add git &&\
     mkdir -p "/opt/" &&\
@@ -17,7 +17,7 @@ RUN set -eux &&\
 # Configure phpcs defaults
 RUN phpcs --config-set installed_paths /opt/PHPCompatibility &&\
     phpcs --config-set default_standard PHPCompatibility &&\
-    phpcs --config-set testVersion 7.4 &&\
+    phpcs --config-set testVersion 8.0 &&\
     phpcs --config-set report_width 120
 
 # Configure PHP with all the memory we might need (unlimited)
