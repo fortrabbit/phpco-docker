@@ -1,6 +1,8 @@
 # phpco
 
-An installation of PHP7 and [PHP Compatibility](https://github.com/PHPCompatibility/PHPCompatibility) in a small Alpine Linux Docker image.
+⚠️ Unmaintained and archived!
+
+An installation of PHP8 and [PHP Compatibility](https://github.com/PHPCompatibility/PHPCompatibility) in a small Alpine Linux Docker image.
 
 ## PHPCompatibility
 
